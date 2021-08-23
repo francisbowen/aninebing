@@ -34,11 +34,14 @@ Objects Referenced:
 {%- endcapture -%}
 
 {% form 'product', product, id: form_id, class: form_class, data-product-id: product.id %}
+
   {% assign current_variant = product.selected_or_first_available_variant %}
 
   {%- include 'color-swatches' -%}
 
   {% unless product.has_only_default_variant %}
+    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" class="product-form__variants js-hidden-variant">
+    
     <div class="form__size-wrapper js-product-form-size js-product-form-size--{{ size }}">
       <button type="button" class="button button-text button--primary button--size js-size-toggle js-button-size  hide-from@md">
         {%- if product.variants.size > 1 -%}
@@ -93,7 +96,7 @@ Objects Referenced:
               <input class="option" value="{{ variant.id }}" type="radio" aria-hidden="true" aria-label="Hidden option input">
               <label role="button" data-current-variant='[{"{{ variant.option1 }}": {{ variant.id }} }]' data-current-sku="{{ variant.sku }}" data-color-id="color--{{ product.id }}" data-product-handle="{{ product.handle }}" data-product-title="{{ product.title }}" data-product-id="{{ product.id }}"  data-variant-id="{{ variant.id }}" for="{{ variant.id }}-{{ size }}" class="is-disabled style style--secondary" data-variant-qty="{{ variant.inventory_quantity }}" data-qty-limit="{{ qty_limit }}" data-limit-msg="{% if show_limit_msg %}{{ section.settings.limited_qty_text }}{% endif %}" data-image="{{ product.featured_image | img_url: 'master' }}" data-price="{{ variant.price }}" data-loyalty-points="+ {{ variant.price | divided_by: 100 | floor }}{{ 'products.product.loyalty_points' | t }}" data-option1="{{ product.options_with_values[0].name | upcase }}: {{ variant.option1 }}" tabindex="0" aria-label="Click to select {{ product.options_with_values[0].name }}: {{ variant.option1 }}">{{ variant.title }}</label>
             {%- elsif variant.available -%}
-              <input class="option" name="id" value="{{ variant.id }}" type="radio" aria-hidden="true" aria-label="Hidden option input" {%- if variant == current_variant -%} selected{%- endif -%}>
+              <input class="option" value="{{ variant.id }}" type="radio" aria-hidden="true" aria-label="Hidden option input" {%- if variant == current_variant -%} selected{%- endif -%}>
               <label role="button" data-current-variant='[{"{{ variant.option1 }}": {{ variant.id }} }]' data-current-sku="{{ variant.sku }}" data-color-id="color--{{ product.id }}" data-product-handle="{{ product.handle }}" data-product-title="{{ product.title }}" data-product-id="{{ product.id }}" data-variant-id="{{ variant.id }}" for="{{ variant.id }}-{{ size }}" data-variant-qty="{{ variant.inventory_quantity }}" data-qty-limit="{{ qty_limit }}" data-limit-msg="{% if show_limit_msg %}{{ section.settings.limited_qty_text }}{% endif %}" data-image="{{ product.featured_image | img_url: 'master' }}" data-price="{{ variant.price }}" data-loyalty-points="+ {{ variant.price | divided_by: 100 | floor }}{{ 'products.product.loyalty_points' | t }}" data-option1="{{ product.options_with_values[0].name | upcase }}: {{ variant.option1 }}" class="style style--secondary" tabindex="0" aria-label="Click to select {{ product.options_with_values[0].name }}: {{ variant.option1 }}">{{ variant.title }}</label>
             {%- else -%}
               {%- assign variant_availability = false -%}
@@ -129,6 +132,6 @@ Objects Referenced:
   {% endunless %}
 
   {% unless template.suffix == 'bundle' %}
-    {% include 'form--product__action' %}
+    {% include 'form--product__action' with size %}
   {% endunless %}
 {% endform %}

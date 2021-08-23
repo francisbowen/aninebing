@@ -72,7 +72,6 @@
         {%- else -%}
           {%- assign img_class = 'product__image product__grid-item hide-until@md js-prod-desk-image hide' -%}
         {%- endif -%}
-
         {%- include 'image--responsive-no-max' with image: variant.image, wrapper_class: img_class, variantId: variant.id -%}
         {%- include 'image--responsive-no-max' with image: variant.image, wrapper_class: img_class_mobile, variantId: variant.id -%}
       {%- endfor -%}
@@ -109,7 +108,6 @@
       {% comment %} Generic Images {% endcomment %}
       {%- for image in product.images -%}
         {%- if image.alt contains product.title or image.alt == '' or image.alt == blank -%}
-
           {%- assign img_class = 'product__image product__grid-item hide-until@md js-prod-desk-image' -%}
           {%- assign img_class_mobile = 'product__image product__grid-item js-product-image js-prod-mob-image hide' -%}
           {%- include 'image--responsive-no-max' with image: image, wrapper_class: img_class -%}
@@ -141,20 +139,20 @@
         {%- endif -%}
 
         {%- unless image.alt == 'swatch' -%}
-          {%- include 'image--responsive-no-max' with image: image, wrapper_class: wrapper_class, wrapper_attributes -%}
+          {% assign coming_from = '' %}
+          {% if forloop.first %}
+            {% assign coming_from = 'product-desktop' %}
+          {% endif %}
+          {%- include 'image--responsive-no-max' with image: image, wrapper_class: wrapper_class, wrapper_attributes, coming_from -%}
           {%- include 'image--responsive-no-max' with image: image, wrapper_class: 'product__image product__grid-item js-product-image js-prod-mob-image', wrapper_attributes: wrapper_attributes_mobile -%}
         {%- endunless -%}
       {%- endfor -%}
     {%- endif -%}
-
     {% if productImagesLength == 1 %}
       {%- include 'product_info' with custom_class: 'product__grid-item js-product-info', tag_list: section.settings.tag_list -%}
     {%- endif -%}
 
   </section>
-
-  {% comment %} Removing alternative product colors {% endcomment %}
-  {% comment %} {% include 'product-more-colors' %} {% endcomment %}
 
   <div id="findmine-module"></div>
 

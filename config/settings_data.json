@@ -50,8 +50,11 @@
     "gift_minimum_amount": "100",
     "gift_product_1": "",
     "gift_product_2": "",
-    "cart_promo_message": "FREE SHIPPING + RETURNS",
+    "cart_promo_message": "<p>FREE SHIPPING + RETURNS<\/p>",
     "show_cart_promo_message": true,
+    "delivery_estimate_message": "<p><strong>SHIP IN 1 - 3 DAYS<\/strong><\/p>",
+    "show_delivery_estimate_message": false,
+    "delivery_message_font_size": 20,
     "nb_events_articles": 4,
     "nb_press_articles": 6,
     "show_zone_product_exclusion": true,
@@ -202,9 +205,9 @@
             "type": "header_menu_image",
             "settings": {
               "title": "clothing",
-              "image": "shopify:\/\/shop_images\/MEGA_MENU_2021_JULYWK1_BOWIE_TEE.jpg",
-              "image_link": "shopify:\/\/collections\/t-shirts-sweatshirts",
-              "image_title": "ESSENTIAL GRAPHICS",
+              "image": "shopify:\/\/shop_images\/MEGA_MENU_2021_AUGWK2_GAVINJEAN_LOUBLAZER.jpg",
+              "image_link": "shopify:\/\/collections\/all-clothing",
+              "image_title": "EVERYDAY ESSENTIALS",
               "image_title_color": "#ffffff"
             }
           },
@@ -212,7 +215,7 @@
             "type": "header_menu_image",
             "settings": {
               "title": "new-arrivals",
-              "image": "shopify:\/\/shop_images\/mega_menu_2021_augwk1_lennoxset.jpg",
+              "image": "shopify:\/\/shop_images\/MEGA_MENU_2021_AUGWK3_HUNTER_COAT.jpg",
               "image_link": "shopify:\/\/collections\/new-arrivals",
               "image_title": "NEW ARRIVALS",
               "image_title_color": "#ffffff"
@@ -232,7 +235,7 @@
             "type": "header_menu_image",
             "settings": {
               "title": "campaigns",
-              "image": "shopify:\/\/shop_images\/MEGA_MENU_2021_JULYWK4_MINI_TAYLIN_TOTE.jpg",
+              "image": "shopify:\/\/shop_images\/MEGA_MENU_2021_AUGWK2_MINISAFFRONTOTE.jpg",
               "image_link": "shopify:\/\/pages\/fall-2021-lookbook",
               "image_title": "FALL 2021",
               "image_title_color": "#ffffff"
@@ -1038,6 +1041,17 @@
               "selected_collection": "hp-sale-slider",
               "url": "shopify:\/\/collections\/new-styles-added"
             }
+          },
+          "5515850c-7e3b-409a-9006-db5ca567fc45": {
+            "type": "slide",
+            "settings": {
+              "collection_title": "New Arrivals",
+              "restrict_height": true,
+              "enable_product_limit": true,
+              "product_limit": 10,
+              "selected_collection": "new-arrivals",
+              "url": "shopify:\/\/collections\/summer-2021"
+            }
           }
         },
         "block_order": [
@@ -1089,7 +1103,8 @@
           "73b2764b-46b1-437b-96c1-0a3a6ddd273b",
           "558d9fbc-47c3-4b7f-8060-cbb83b493f62",
           "d042df8d-9c9c-4bc2-961b-d329feb66c3c",
-          "686ec8f1-e113-4bb5-b78a-89b77de2b541"
+          "686ec8f1-e113-4bb5-b78a-89b77de2b541",
+          "5515850c-7e3b-409a-9006-db5ca567fc45"
         ],
         "settings": {}
       },
@@ -2958,6 +2973,64 @@
               "alignment_left_mobile": 50,
               "text_color": ""
             }
+          },
+          "f5318523-f06d-433a-9be8-6caf62be0edf": {
+            "type": "slide",
+            "settings": {
+              "title": "Instagram Giveaway 1",
+              "menu": "",
+              "hide_title": true,
+              "collection_title": "",
+              "url": "shopify:\/\/collections\/giveaway-winners",
+              "url_link_to": "shopify:\/\/collections\/new-arrivals",
+              "alignment_top_desktop": 50,
+              "alignment_left_desktop": 50,
+              "alignment_top_tablet": 50,
+              "alignment_left_tablet": 50,
+              "alignment_top_mobile": 50,
+              "alignment_left_mobile": 50,
+              "text_color": "",
+              "desktop_image": "shopify:\/\/shop_images\/1m_followers_ab_giveaway_ecom_landing_page_banner.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/1m_followers_ab_giveaway_ecom_landing_page_banner_mobile.jpg"
+            }
+          },
+          "966457c2-01ba-4d99-9fb3-d759c08bd5f7": {
+            "type": "slide",
+            "settings": {
+              "title": "Instagram Giveaway 2",
+              "menu": "",
+              "hide_title": true,
+              "collection_title": "",
+              "url": "shopify:\/\/collections\/giveaway-winners-2",
+              "url_link_to": "shopify:\/\/collections\/new-arrivals",
+              "alignment_top_desktop": 50,
+              "alignment_left_desktop": 50,
+              "alignment_top_tablet": 50,
+              "alignment_left_tablet": 50,
+              "alignment_top_mobile": 50,
+              "alignment_left_mobile": 50,
+              "text_color": "",
+              "desktop_image": "shopify:\/\/shop_images\/1m_followers_ab_giveaway_ecom_landing_page_banner.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/1m_followers_ab_giveaway_ecom_landing_page_banner_mobile.jpg"
+            }
+          },
+          "806d11c2-fede-4bf0-913b-2cda9425c8d0": {
+            "type": "slide",
+            "settings": {
+              "title": "Summer 2021",
+              "menu": "quicklinks-top-traffic",
+              "hide_title": true,
+              "collection_title": "",
+              "url": "shopify:\/\/collections\/summer-2021",
+              "url_link_to": "",
+              "alignment_top_desktop": 50,
+              "alignment_left_desktop": 50,
+              "alignment_top_tablet": 50,
+              "alignment_left_tablet": 50,
+              "alignment_top_mobile": 50,
+              "alignment_left_mobile": 50,
+              "text_color": ""
+            }
           }
         },
         "block_order": [
@@ -2997,7 +3070,10 @@
           "8d80c385-29b2-433d-81ca-1330336eb284",
           "1da0d774-acd3-4e39-b786-64ad30a21c78",
           "7b036633-2297-45e8-a4e2-e3859c7ce4c7",
-          "4ecbb870-0e25-49fd-b0bd-6dd55e408f9d"
+          "4ecbb870-0e25-49fd-b0bd-6dd55e408f9d",
+          "f5318523-f06d-433a-9be8-6caf62be0edf",
+          "966457c2-01ba-4d99-9fb3-d759c08bd5f7",
+          "806d11c2-fede-4bf0-913b-2cda9425c8d0"
         ],
         "settings": {}
       },
@@ -5593,13 +5669,13 @@
       "16067020175c0811ee": {
         "type": "full-width-image",
         "settings": {
-          "title": "AUG WK 1 - B1",
+          "title": "AUG WK 3 - B1",
           "content_unique_identifier": "homepage-section-1",
-          "content_unique_identifier_id": "P1_21AUG1_NewArrivals_UniTee",
+          "content_unique_identifier_id": "P1_21AUG3_NewArrivals_Hunter",
           "gap_under_content": 0,
           "gap_under_content_mobile": 0,
-          "background_image_desktop": "shopify:\/\/shop_images\/ab_hpb_desktop_augwk1_-1l.jpg",
-          "background_image_mobile": "shopify:\/\/shop_images\/ab_hpb_mobile_augwk1_-1.jpg",
+          "background_image_desktop": "shopify:\/\/shop_images\/AB_HPB_Desktop_AugWK3_-1L.jpg",
+          "background_image_mobile": "shopify:\/\/shop_images\/AB_HPB_Mobile_AugWK3_-1.jpg",
           "content_image_visibility": "mobile_and_desktop",
           "content_image_width": 45,
           "content_title": "",
@@ -5615,7 +5691,7 @@
           "content_body_margin_top": 3,
           "cta_text": "",
           "cta_email_container": "",
-          "cta_link_container": "https:\/\/www.aninebing.com\/collections\/new-arrivals?shopify_default_P1_AUG1_NewArrivals_UniTee",
+          "cta_link_container": "https:\/\/www.aninebing.com\/collections\/new-arrivals?hp_shopify_default_P1_AUG2_NewArrivals_RoryJacket",
           "button_style_desktop": "button_quaternary",
           "button_style_mobile": "button_quaternary",
           "content_cta_font_size_desktop": 14,
@@ -7307,12 +7383,12 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "blocks": {
-          "97a36156-972c-4405-8aaa-0f1ea582feba": {
-            "type": "announcement_bar",
+          "4883e96f-de0e-4723-bd10-b70e9b0ae142": {
+            "type": "ge_announcement_bar",
             "settings": {
-              "title": "denim",
+              "title": "GE Slider",
               "remove_underline": true,
-              "announcement": "<p><a href=\"\/collections\/denim\" title=\"Denim\">BACK IN STOCK | BEST-SELLING DENIM<\/a><\/p>"
+              "announcement": "<p><a href=\"\/collections\/new-arrivals\" title=\"New Arrivals\">FREE SHIPPING + RETURNS ON ALL ORDERS<\/a><\/p>"
             }
           },
           "cc7fe77d-07ec-4b45-bff0-cf28cd0ab982": {
@@ -7323,6 +7399,14 @@
               "announcement": "<p><a href=\"\/pages\/styling\" title=\"Styling Page\">PERSONAL SHOPPING + STYLING | LEARN MORE<\/a><\/p>"
             }
           },
+          "97a36156-972c-4405-8aaa-0f1ea582feba": {
+            "type": "announcement_bar",
+            "settings": {
+              "title": "denim",
+              "remove_underline": true,
+              "announcement": "<p><a href=\"\/collections\/denim\" title=\"Denim\">BACK IN STOCK | BEST-SELLING DENIM<\/a><\/p>"
+            }
+          },
           "205bd0de-8c1e-443e-8acb-3f1588e892fb": {
             "type": "announcement_bar",
             "settings": {
@@ -7330,21 +7414,13 @@
               "remove_underline": true,
               "announcement": "<p><a href=\"\/collections\/new-arrivals\" title=\"New Arrivals\">New Arrivals Every Tuesday<\/a><\/p>"
             }
-          },
-          "4883e96f-de0e-4723-bd10-b70e9b0ae142": {
-            "type": "ge_announcement_bar",
-            "settings": {
-              "title": "GE Slider",
-              "remove_underline": true,
-              "announcement": "<p><a href=\"\/collections\/new-arrivals\" title=\"New Arrivals\">FREE SHIPPING + RETURNS ON ALL ORDERS<\/a><\/p>"
-            }
           }
         },
         "block_order": [
-          "97a36156-972c-4405-8aaa-0f1ea582feba",
+          "4883e96f-de0e-4723-bd10-b70e9b0ae142",
           "cc7fe77d-07ec-4b45-bff0-cf28cd0ab982",
-          "205bd0de-8c1e-443e-8acb-3f1588e892fb",
-          "4883e96f-de0e-4723-bd10-b70e9b0ae142"
+          "97a36156-972c-4405-8aaa-0f1ea582feba",
+          "205bd0de-8c1e-443e-8acb-3f1588e892fb"
         ],
         "settings": {
           "show_announcement": true,
@@ -8746,13 +8822,13 @@
       "162787773299eee696": {
         "type": "full-width-image",
         "settings": {
-          "title": "AUG WK 1 - B2",
+          "title": "AUG WK 3 - B2",
           "content_unique_identifier": "homepage-section-2",
-          "content_unique_identifier_id": "P2_21AUG1_Featured_AverieBlack",
+          "content_unique_identifier_id": "P2_21AUG3_Featured_LouGavin",
           "gap_under_content": 0,
           "gap_under_content_mobile": 0,
-          "background_image_desktop": "shopify:\/\/shop_images\/AB_HPB_Desktop_AugWK1_-4R.jpg",
-          "background_image_mobile": "shopify:\/\/shop_images\/AB_HPB_Mobile_AugWK1_-4_1.jpg",
+          "background_image_desktop": "shopify:\/\/shop_images\/ab_hpb_desktop_augwk3_-3r.jpg",
+          "background_image_mobile": "shopify:\/\/shop_images\/ab_hpb_mobile_augwk3_-3.jpg",
           "content_image_visibility": "mobile_and_desktop",
           "content_image_width": 45,
           "content_title": "",

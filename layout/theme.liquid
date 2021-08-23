@@ -68,7 +68,7 @@ Objects Referenced:
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="{{ settings.theme_color }}">
     {% include 'favicon' %}
-   
+
     {% include 'meta__social' %}
 
     {% comment %} Redirects {% endcomment %}
@@ -93,22 +93,27 @@ Objects Referenced:
 
     {% if shop.url == 'https://anine-bing-dev01-us.myshopify.com' or shop.url == 'https://www.aninebing.com' %}
       {% comment %} North America {% endcomment %}
-      {% include 'head-pixel-us' %}
-      {% include 'hotjar-script-us' %}
-      {% include 'bouncex-script-us' %}
+      {%- include 'head-pixel-us' -%}
+      {%- include 'google-dynamic-remarketing-us' -%}
+      {%- include 'hotjar-script-us' -%}
+      {%- include 'bouncex-script-us' -%}
 
       {% comment %} Generic Global E Pixels on pages/international-checkout {% endcomment %}
       {%- if template.suffix == 'international-checkout' -%}
         {% comment %}{% include 'checkout-generic-globale-pixel' %}{% endcomment %}
+    	
+    	{% comment %} Attentive (US + EU) {% endcomment %}
+   		<script src="https://cdn.attn.tv/aninebing/dtag.js"></script>
       {%- endif -%}
       <!-- globale_css_include -->
-      {% include 'globale-css-include' %}
+      {%- include 'globale-css-include' -%}
     {% else %}
       {% comment %} Europe {% endcomment %}
-      {% include 'head-pixel-eu' %}
-      {% include 'hotjar-script' %}
-      {% include 'retention-science-pixel-eu' %}
-      {% include 'bouncex-script-eu' %}
+      {%- include 'head-pixel-eu' -%}
+      {%- include 'google-dynamic-remarketing-eu' -%}
+      {%- include 'hotjar-script' -%}
+      {%- include 'retention-science-pixel-eu' -%}
+      {%- include 'bouncex-script-eu' -%}
     {% endif %}
 
     {% comment %} Generic Global E Pixels on pages/international-checkout {% endcomment %}
@@ -186,17 +191,14 @@ Objects Referenced:
       {% comment %}North America{% endcomment %}
       {%- include 'criteo-tracking-us' -%}
       {%- include 'body-pixel-us' -%}
-      {%- include 'google-dynamic-remarketing-us' -%}
 
       {% comment %} globale_js_include {% endcomment %}
       {% include 'globale-js-include' %}
-      
     {%- else -%}
 
       {% comment %}Europe{% endcomment %}
       {%- include 'criteo-tracking-eu' -%}
       {%- include 'body-pixel-eu' -%}
-      {%- include 'google-dynamic-remarketing-eu' -%}
     {%- endif -%}
 
     {% comment %} Antavo - Loyalty Program {% endcomment %}

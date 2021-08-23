@@ -448,7 +448,7 @@
         "content": "Cart related"
       },
       {
-        "type": "text",
+        "type": "richtext",
         "id": "cart_promo_message",
         "label": "Cart Promo Message",
         "info": "Message that shows up above payment details"
@@ -457,6 +457,57 @@
         "type": "checkbox",
         "id": "show_cart_promo_message",
         "label": "Check to show cart promo message"
+      },
+      {
+        "type": "range",
+        "id": "cart_promo_message_font_size",
+        "min": 8,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "Promo Message font-size (Desktop)",
+        "default": 12
+      },
+      {
+        "type": "range",
+        "id": "cart_promo_message_font_size_mobile",
+        "min": 8,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "Promo Message font-size (Mobile)",
+        "default": 12
+      },
+      {
+        "type": "richtext",
+        "id": "delivery_estimate_message",
+        "label": "Delivery Estimate Message",
+        "info": "Message that shows up below payment details"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_delivery_estimate_message",
+        "label": "Check to show cart flyout delivery message"
+      },
+      {
+        "type": "range",
+        "id": "delivery_message_font_size",
+        "min": 8,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "Delivery message font-size (Desktop)",
+        "default": 12
+      },
+      {
+        "type": "range",
+        "id": "delivery_message_font_size_mobile",
+        "min": 8,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "Delivery message font-size (Mobile)",
+        "default": 12
       }
     ]
   },

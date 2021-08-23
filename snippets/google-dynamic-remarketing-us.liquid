@@ -5,8 +5,12 @@
     </script>
     <script>
       var ecomm_prodid=[];
-      for(var i=0;i<json_product.variants.length;i++)
-        ecomm_prodid.push(json_product.variants[i].id);
+
+      for (var i=0;i<json_product.variants.length;i++) {
+        // TODO: Revert back if it doesn't work
+        // ecomm_prodid.push(json_product.variants[i].id);
+        ecomm_prodid.push({'id': json_product.variants[i].id, 'google_business_vertical': 'retail'});
+      }
     </script>
     <script type="text/javascript">
       var google_tag_params = {
@@ -21,18 +25,20 @@
         ecomm_pagetype: 'category'
       };
     </script>
-  {% elsif template contains 'cart' or template.suffix == 'international-checkout' %}
+    {% elsif template contains 'cart' %}
     <script type="text/javascript">
       var id = new Array();
       {% for item in cart.items %}
-      id.push('{{item.variant.id}}');
-       {% endfor %}
+        // TODO: Revert back if it doesn't work
+        // id.push('{{item.variant.id}}');
+        id.push({'id': '{{ item.variant.id }}', 'google_business_vertical': 'retail'});
+      {% endfor %}
 
-       var google_tag_params = {
-         ecomm_prodid: id,
-         ecomm_pagetype: 'cart',
-         ecomm_totalvalue: parseFloat('{{ cart.total_price | money_without_currency | remove: ","}}')
-       };
+      var google_tag_params = {
+        ecomm_prodid: id,
+        ecomm_pagetype: 'cart',
+        ecomm_totalvalue: parseFloat('{{ cart.total_price | money_without_currency | remove: ","}}')
+      };
     </script>
   {% elsif template contains 'search' %}
     <script type="text/javascript">
@@ -54,12 +60,22 @@
     </script>
   {% endif %}
 
+  
+  {% comment %} <script>
+    // TODO: Revert back if it doesn't work
+    gtag('event', 'page_view', {'send_to': 'AW-969851850',
+      'ecomm_prodid': window.google_tag_params.ecomm_prodid,
+      'ecomm_pagetype': window.google_tag_params.ecomm_pagetype,
+      'ecomm_totalvalue':window.google_tag_params.ecomm_totalvalue
+    });
+  </script> {% endcomment %}
+
   <script>
-  gtag('event', 'page_view', {'send_to': 'AW-969851850',
-                              'ecomm_prodid':window.google_tag_params.ecomm_prodid,
-                              'ecomm_pagetype': window.google_tag_params.ecomm_pagetype,
-                              'ecomm_totalvalue':window.google_tag_params.ecomm_totalvalue
-                             });
+    gtag('event', 'page_view', {
+      'send_to': 'AW-969851850',
+      'value': window.google_tag_params.ecomm_totalvalue,
+      'items': window.google_tag_params.ecomm_prodid
+    });
   </script>
 
   <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion_async.js" charset="utf-8"></script>
@@ -75,10 +91,10 @@
           total = data.total_price;
 
           gtag('event', 'page_view', {'send_to': 'AW-969851850',
-                                'ecomm_prodid':id,
-                                'ecomm_pagetype': 'cart',
-                                'ecomm_totalvalue':total
-                               });
+            'ecomm_prodid':id,
+            'ecomm_pagetype': 'cart',
+            'ecomm_totalvalue':total
+          });
         });
       }
     });

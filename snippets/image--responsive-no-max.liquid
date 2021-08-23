@@ -78,6 +78,14 @@
   >
 </div>
 
+{% if coming_from == 'product-desktop' %}
+  {% assign classes = 'svg-icon icon-heart js-add-to-wishlist hide-until@md swym-icon swym-heart swym-loaded product_' | append: product.id %}
+
+  <div class="swym-heart-wrapper">
+    {%- include 'icons' with selected_icon: 'heart', icon_class: classes, icon_fill: 'none', icon_stroke: '#000000', title: 'products.product.add_to_wishlist', desc: 'products.product.add_to_wishlist_desc' -%}
+  </div>
+{% endif %}
+
 <noscript>
   <img class="{{ image_class }}" src="{{ image | img_url: '2048x2048' }}" alt="{{ image.alt | escape }}">
 </noscript>

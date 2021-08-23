@@ -47,13 +47,17 @@
       <button type="button" class="button button-text button--secondary button--atc js-product-atc js-open-modal js-notify-me js-out-of-stock {{ button_oos_class }}" data-modal-target="#my-signup-modal" disabled name="modal" data-variant-id="{{ product.variants.first.id }}">
         {{ 'products.product.out_of_stock' | t }}
       </button>
+
+      {% comment %} TODO: Re-add when it's ready {% endcomment %}
+      {% comment %} <div class="form__additional-payment-button js-additional-payment-button {{ button_atc_class }}">
+        {{ form | payment_button }}
+      </div> {% endcomment %}
     {%- else -%}
       <button type="button" class="button button-text button--secondary button--atc button--gift js-open-modal" disabled>
         {{- 'gift_product.gift_atc' | t -}}
       </button>
     {%- endif -%}
 
-    {%- include 'icons' with selected_icon: 'heart', icon_class: icon_classes_desk, icon_fill: 'none', icon_stroke: '#000000', title: 'products.product.add_to_wishlist', desc: 'products.product.add_to_wishlist_desc' -%}
   </div>
 
   {% assign lowercase_product_type = product.type | downcase %}
@@ -76,10 +80,6 @@
   
 </div>
 <div class="product__benefit">
-  {% comment %} Until Further notice {% endcomment %}
-  {% comment %} <div class="product__loyalty-points">
-    <a href="{% unless customer %}/account/login{% else %}{{ settings.loyalty_link }}{% endunless %}" class="link link--primary js-product-points" title="{{ 'general.loyalty.go_to_loyalty' | t }}">+ {{ product.price | divided_by: 100 | floor }}{{ 'products.product.loyalty_points' | t }}</a>
-  </div> {% endcomment %}
   <div class="product__limited">
     {%- include 'product__limited-quantity' with item_qty: product.variants.first.inventory_quantity  -%}
     <span class="product__limit-qty-msg js-qty-limit {% unless show_limit_msg %}hidden{% endunless %}">{{ section.settings.limited_qty_text }}</span>
